@@ -13,6 +13,7 @@ const typeResolvers = require('./graphql/resolvers');
 const server = new ApolloServer({
   typeDefs: objectTypeDefs,
   resolvers: typeResolvers,
+  context: ({req}) => ({req})
 });
 
 // Connect to database
