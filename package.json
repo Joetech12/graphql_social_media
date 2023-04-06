@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "serve": "node index"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "graphql": "^16.6.0",
+    "graphql-subscriptions": "^2.0.0",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.3"
   },

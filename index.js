@@ -1,8 +1,11 @@
-const { ApolloServer } = require('apollo-server');
+const { ApolloServer, PubSub } = require('apollo-server');
+// const { PubSub } = require('graphql-subscriptions');
 const gql = require('graphql-tag');
 const mongoose = require('mongoose');
 const colors = require('colors');
 require('dotenv').config();
+
+// const pubsub = new PubSub();
 
 const { MONGODB } = require('./config.js');
 const connectDB = require('./config/db');
@@ -13,7 +16,7 @@ const typeResolvers = require('./graphql/resolvers');
 const server = new ApolloServer({
   typeDefs: objectTypeDefs,
   resolvers: typeResolvers,
-  context: ({req}) => ({req})
+  context: ({ req }) => ({ req }),
 });
 
 // Connect to database
